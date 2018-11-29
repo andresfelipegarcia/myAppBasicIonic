@@ -1,0 +1,47 @@
+<!--
+  Generated template for the PlacePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Place</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <!-- <button ion-button color="primary" (click)="navigateBack()">Navigate Back </button>
+  <button ion-button color="primary" (click)="navigateThird()">Navigate Third </button>-->
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Name</ion-label>
+      <ion-input type="text" [(ngModel)]="places.name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Address</ion-label>
+      <ion-input type="text" [(ngModel)]="places.address"></ion-input>
+    </ion-item>
+
+    <ion-list>
+      <ion-item>
+        <ion-label>Category</ion-label>
+        <ion-select [(ngModel)]="places.category">
+          <ion-option value="placeopen">Place Open</ion-option>
+          <ion-option value="placeclose">Place Close</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <ion-item>
+      <ion-label floating>Description</ion-label>
+      <ion-textarea [(ngModel)]="places.description"></ion-textarea>
+    </ion-item>
+  </ion-list>
+  <button ion-button full (click)="savePlace()">Save Place</button>
+</ion-content>
