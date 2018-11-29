@@ -16,8 +16,9 @@ export class HomePage {
 
   }
 
-  navigatePlace(name){
-    this.navCtrl.push(PlacePage,{name: name});
+  navigatePlace(){
+    //this.navCtrl.push(PlacePage,{name: name});
+    this.navCtrl.push(PlacePage,{place: {}});
   }
 
   goToViewDetail(){

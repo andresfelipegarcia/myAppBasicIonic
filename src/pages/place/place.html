@@ -20,18 +20,18 @@
 
     <ion-item>
       <ion-label floating>Name</ion-label>
-      <ion-input type="text" [(ngModel)]="places.name"></ion-input>
+      <ion-input type="text" [(ngModel)]="place.name"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Address</ion-label>
-      <ion-input type="text" [(ngModel)]="places.address"></ion-input>
+      <ion-input type="text" [(ngModel)]="place.address"></ion-input>
     </ion-item>
 
     <ion-list>
       <ion-item>
         <ion-label>Category</ion-label>
-        <ion-select [(ngModel)]="places.category">
+        <ion-select [(ngModel)]="place.category">
           <ion-option value="placeopen">Place Open</ion-option>
           <ion-option value="placeclose">Place Close</ion-option>
         </ion-select>
@@ -40,7 +40,7 @@
 
     <ion-item>
       <ion-label floating>Description</ion-label>
-      <ion-textarea [(ngModel)]="places.description"></ion-textarea>
+      <ion-textarea [(ngModel)]="place.description"></ion-textarea>
     </ion-item>
   </ion-list>
   <button ion-button full (click)="savePlace()">Save Place</button>
