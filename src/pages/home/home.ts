@@ -9,7 +9,7 @@ import {PlacePage} from "../place/place";
 export class HomePage {
 
   places: any = [
-    { name: 'Place One', address:'Address One', category: 'Category One' }
+    { nameOne: 'Place One', address:'Address One', category: 'Category One' }
   ];
 
   constructor(public navCtrl: NavController) {
@@ -26,7 +26,9 @@ export class HomePage {
   }
 
   goToViewDetailExistent(place){
-    this.navCtrl.push(PlacePage,{place: place});
+    //this.navCtrl.push(PlacePage,{place: place});
+    this.navCtrl.push(PlacePage,{place: {}});
+
   }
 
 }

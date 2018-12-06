@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -12,9 +13,15 @@ import {TabsPage} from "../pages/tabs/tabs";
 import {AboutPage} from "../pages/about/about";
 import {ThirdPage} from "../pages/third/third";
 
+
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+
+import { HttpClientModule } from '@angular/common/http';
+import {PlacesService} from "../services/places.service";
+import {FormsModule} from "@angular/forms";
+import {HttpModule} from "@angular/http";
 
 
 export const firebaseConfig = {
@@ -35,14 +42,16 @@ export const firebaseConfig = {
     TabsPage,
     AboutPage,
     ThirdPage
-
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -57,6 +66,7 @@ export const firebaseConfig = {
   providers: [
     StatusBar,
     SplashScreen,
+    PlacesService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

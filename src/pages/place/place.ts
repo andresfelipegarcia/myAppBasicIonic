@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {ThirdPage} from "../third/third";
 import {HomePage} from "../home/home";
+import {PlacesService} from "../../services/places.service";
 
 /**
  * Generated class for the PlacePage page.
@@ -19,7 +20,8 @@ export class PlacePage {
 
   place: any = {};
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              public placesServices: PlacesService) {
     //this.namePlace = navParams.get('name');
     this.place = navParams.get('place');
 
@@ -38,7 +40,9 @@ export class PlacePage {
   }
 
   savePlace(){
-    alert(this.place);
+    this.place.id = Date.now();
+
+    console.log("*******************************"+this.place);
   }
 
 }
